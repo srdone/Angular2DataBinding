@@ -1,3 +1,22 @@
 <h1>
   {{title}}
 </h1>
+
+<my-sizer [size]="fontSize" (sizeChange)="handleSizeChange($event)" [name]="'Font Size 1'"></my-sizer>
+<my-sizer [(size)]="fontSize2" [name]="'Font Size 2'"></my-sizer>
+<my-sizer [size]="fontSize3" (sizeChange)="fontSize3=$event" [name]="'Font Size 3'" [additionalColors]="additionalColors"></my-sizer>
+<h4>Font Size 1: {{fontSize1}}</h4>
+<h4>Font Size 2: {{fontSize2}}</h4>
+<h4>Font Size 3: {{fontSize3}}</h4>
+
+
+<!--Two way binding to controls without ngModel-->
+<input [value]="myValue" (input)="myValue = $event.target.value">
+<p>My value is: {{myValue}}</p>
+
+<!--Two way binding with ngModel-->
+<input [(ngModel)]="myValue">
+<input [ngModel]="myValue" (ngModelChange)="myValue = $event">
+
+<br/>
+<a href="http://blog.thoughtram.io/angular/2016/10/13/two-way-data-binding-in-angular-2.html">More on two way data binding with Angular 2</a>

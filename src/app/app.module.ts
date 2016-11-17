@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { MySizerComponent } from './my-sizer/my-sizer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MySizerComponent
   ],
   imports: [
     BrowserModule,

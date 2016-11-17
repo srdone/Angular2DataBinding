@@ -1,0 +1,12 @@
+<div>
+  <button (click)="dec()" title="smaller">-</button>
+  <button (click)="inc()" title="bigger">+</button>
+  <label for="fontColor" style="font-size: 10px">Font Color:</label>
+  <select name="font-color" placeholder="Select font color" [(ngModel)]="fontColor">
+    <option value="red">Red</option>
+    <option value="blue">Blue</option>
+    <option value="green">Green</option>
+    <option *ngFor="let color of additionalColors" [ngValue]="color.value">{{color.label}}</option>
+  </select>
+  <label [style.font-size.px]="size" [style.color]="fontColor">FontSize for {{name}}: {{size}}px</label>
+</div>
